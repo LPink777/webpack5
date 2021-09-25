@@ -1,8 +1,8 @@
 const { merge } = require('webpack-merge');
 const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+// const glob = require('glob');
+// const PurgecssPlugin = require('purgecss-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -123,9 +123,9 @@ module.exports = merge(BaseConfig, {
         }),
 
         /** 移除无用的内容 */
-        new PurgecssPlugin({
-            paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
-        }),
+        // new PurgecssPlugin({
+        //     paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
+        // }),
 
         /** 图片压缩 */
         new ImageMinimizerPlugin({
